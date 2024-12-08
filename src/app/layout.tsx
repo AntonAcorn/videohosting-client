@@ -1,28 +1,28 @@
-import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import type { Metadata } from 'next'
+import { Noto_Sans } from 'next/font/google'
 
-import "./globals.scss";
-import Layout from "@/components/Layout";
+import Layout from '@/components/layout/Layout'
+import './globals.scss'
 
-const notoSans = Noto_Sans({ subsets: ["latin"] });
+const notoSans = Noto_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-	title: "Video hosting",
-	description: "Video hosting",
-};
+	title: 'Video hosting',
+	description: 'Video hosting'
+}
 
 export default function RootLayout({
-	children,
+	children
 }: Readonly<{
-	children: React.ReactNode;
+	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
+		<html lang='en'>
 			<body className={notoSans.className}>
 				<div>
-					<Layout>{children}</Layout>		
+					<Layout>{children}</Layout>
 				</div>
-				</body>
+			</body>
 		</html>
-	);
+	)
 }

@@ -1,0 +1,46 @@
+@keyframes hideSidebar {
+	0% {
+		transform: translateX(0);
+		width: var(--sidebar-width);
+	}
+
+	100% {
+		@apply w-[3.6rem];
+	}
+}
+
+@keyframes showSidebar {
+	from {
+		@apply w-[3.6rem];
+	}
+
+	to {
+		transform: translateX(0);
+		width: var(--sidebar-width);
+	}
+}
+
+.hidenSidebar {
+	>aside {
+		animation: hideSidebar .35s forwards;
+		flex-grow: 0;
+
+		>nav {
+			>span:first-child {
+				@apply transition-opacity;
+				opacity: 0;
+			}
+		}
+	}
+
+	>div {
+		@apply w-full
+	}
+}
+
+.openedSidebar {
+	>aside {
+		animation: showSidebar .35s forwards;
+		width: var(--sidebar-width);
+	}
+}
