@@ -1,5 +1,4 @@
 import { MORE_SIDEBAR_DATA, SIDEBAR_DATA } from './sidebar.date'
-import { SubscriptionMenuItem } from './sidebar-subscription-menu/SubscriptionMenuItem'
 import { SidebarMenuItem } from './sidebar-components/SidebarMenuItem'
 import { SidebarHeader } from './sidebar-header/SidebarHeader'
 

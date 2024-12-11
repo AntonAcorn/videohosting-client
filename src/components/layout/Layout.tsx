@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, type PropsWithChildren } from 'react'
-import Content from './content/Content'
-import { Sidebar } from './sidebar/SidebarMenu'
-import cn from 'clsx'
-import styles from './layout.module.scss'
+import cn from 'clsx';
+import { useState, type PropsWithChildren } from 'react';
+import Content from './content/Content';
+import styles from './layout.module.scss';
+import { Sidebar } from './sidebar/SidebarMenu';
 
 export default function Layout({ children }: PropsWithChildren<unknown>) {
 	const [isSidebarOpened, setSidebarOpened] = useState(false)

@@ -1,5 +1,5 @@
-import { COLORS } from '@/app/constants/colors.constants'
 import { PUBLIC_PAGE } from '@/config/public-page.config'
+import { COLORS } from '@/constants/colors.constants'
 import { Menu, Youtube } from 'lucide-react'
 import Link from 'next/link'
 
