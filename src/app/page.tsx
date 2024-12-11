@@ -1,40 +1,31 @@
 'use client'
-import { videoService } from '@/services/video.service'
+import { videoService } from '@/service/video.service'
 import type { IVideoItem } from '@/types/videoItem.type'
 import { VideoItem } from '@/ui/VideoItem'
 import { useQuery } from '@tanstack/react-query'
-import { Flame, type LucideIcon } from 'lucide-react'
+import { Flame } from 'lucide-react'
 
-interface Props {
-	videoItem: IVideoItem
-	icon: LucideIcon
-}
-
-export default function Home({ videoItem, icon }: Props) {
+export default function Home() {
 	const { data, isLoading } = useQuery({
 		queryKey: ['explore'],
 		queryFn: () => videoService.getExploreVideos()
 	})
 
-	if (!data) return
-
-	console.log(data)
-
 	return (
-		<>
-			<h1>Hello!</h1>
+		<div>
+			<div>{data?.data.videos[0].thumbnailUrl}</div>
 			<div>
 				{isLoading
 					? 'Is loading...'
-					: data.data.length &&
-						data.data.map(videItem => (
+					: data?.data.videos.length &&
+						data.data.videos.map((videItem: IVideoItem) => (
 							<VideoItem
 								key={videItem.id}
 								videoItem={videItem}
-								icon={Flame}
+								Icon={Flame}
 							/>
 						))}
 			</div>
-		</>
+		</div>
 	)
 }

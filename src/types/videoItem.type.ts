@@ -12,3 +12,7 @@ export interface IVideoItem {
 	channel: IChannelItem
 	createdAt: string
 }
+
+export interface IVideoArray {
+	videos: IVideoItem[]
+}
