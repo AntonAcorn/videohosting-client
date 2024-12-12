@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import { Noto_Sans } from 'next/font/google';
+import type { Metadata } from 'next'
+import { Noto_Sans } from 'next/font/google'
 
-import Layout from '@/components/layout/Layout';
-import { Providers } from '@/provider/providers';
-import './globals.scss';
+import Layout from '@/components/layout/Layout'
+import { Providers } from '@/provider/providers'
+import './globals.scss'
 
 const notoSans = Noto_Sans({ subsets: ['latin'] })
 

@@ -12,9 +12,13 @@ interface Props {
 export function VideoItem({ videoItem, Icon }: Props) {
 	return (
 		<div>
-			<div>
-				<Link href={PUBLIC_PAGE.VIDEO(videoItem.slug)}>
+			<div className='relative mb-2'>
+				<Link
+					className='max-w-[250px]'
+					href={PUBLIC_PAGE.VIDEO(videoItem.slug)}
+				>
 					<Image
+						className='rounded-md'
 						src={videoItem.thumbnailUrl}
 						alt={videoItem.title}
 						width={250}
@@ -22,8 +26,12 @@ export function VideoItem({ videoItem, Icon }: Props) {
 					/>
 				</Link>
 
-				<Link href={PUBLIC_PAGE.CHANNEL(videoItem.channel.slug)}>
+				<Link
+					className='absolute left-2 bottom-2'
+					href={PUBLIC_PAGE.CHANNEL(videoItem.channel.slug)}
+				>
 					<Image
+						className='rounded-full shadow-md'
 						src={videoItem.channel.avatarUrl}
 						alt={videoItem.channel.name}
 						width={30}
@@ -32,21 +40,45 @@ export function VideoItem({ videoItem, Icon }: Props) {
 				</Link>
 			</div>
 
-			<div>
-				<div>
-					{Icon && <Icon />}
-					<span>{videoItem.viewsCount} views</span>
+			<div className='mb-2 flex items-center justify-between max-w-[250px]'>
+				<div className='flex items-center gap-1'>
+					{Icon && (
+						<Icon
+							className='text-red-500'
+							width={20}
+							height={20}
+						/>
+					)}
+					{/* TODO: format views */}
+					<span className='text-gray-400 text-sm'>
+						{/* {videoItem.viewsCount}  */}
+						1K views
+					</span>
 				</div>
 				<div>
-					<span>{videoItem.createdAt}</span>
+					{/* TODO: format date */}
+					<span className='text-gray-400 text-sm'>{/* {videoItem.createdAt} */}5 days ago</span>
 				</div>
 			</div>
-			<div>{videoItem.title}</div>
+
+			<Link href={PUBLIC_PAGE.VIDEO(videoItem.slug)}>
+				<div className='line-clamp-2 leading-tight max-w-[250px]'>{videoItem.title}</div>
+			</Link>
+
 			<div>
-				<span>{videoItem.channel.name}</span>
-				<span>
-					<BadgeCheck />
-				</span>
+				<Link
+					className='flex items-center gap-0.5'
+					href={PUBLIC_PAGE.CHANNEL(videoItem.channel.slug)}
+				>
+					<span className='text-gray-400 text-sm'>{videoItem.channel.slug}</span>
+					<span>
+						<BadgeCheck
+							className='text-green-500'
+							height={15}
+							width={15}
+						/>
+					</span>
+				</Link>
 			</div>
 		</div>
 	)
