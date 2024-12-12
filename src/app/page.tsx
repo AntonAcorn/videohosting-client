@@ -3,6 +3,7 @@ import type { IVideoItem } from '@/types/videoItem.type'
 import { VideoItem } from '@/ui/VideoItem'
 import { Flame } from 'lucide-react'
 import { Explore } from './explore/Explore'
+import { Heading } from '@/ui/Heading'
 
 export const revalidate = 100
 export const dynamic = 'force-static'
@@ -13,8 +14,11 @@ export default async function Home() {
 
 	return (
 		<section>
-			<h1 className='mb-6 text-lg font-bold'>Trending</h1>
-			<div className='grid grid-cols-4 gap-5'>
+			<Heading
+				title={'Trending'}
+				Icon={Flame}
+			></Heading>
+			<div className='grid grid-cols-5 gap-5'>
 				{videos?.length &&
 					videos.map((videItem: IVideoItem) => (
 						<VideoItem

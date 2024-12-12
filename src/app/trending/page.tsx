@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
 	title: 'Trending',
@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 }
 
 export default function TrendingPage() {
-	return <div>Trending</div>
+	return <></>
 }
