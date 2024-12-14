@@ -1,6 +1,6 @@
 .hideSidebar>aside {
 	width: 3.8rem;
-	flex-grow: 0;
+	transition: width 0.35s;
 
 	>nav>span:first-child {
 		opacity: 0;
@@ -8,14 +8,7 @@
 	}
 }
 
-.hideSidebar>div {
-	width: 100%;
-}
-
 .showSidebar>aside {
 	width: var(--sidebar-width);
-}
-
-.initialSidebar>aside {
 	transition: width 0.35s;
 }

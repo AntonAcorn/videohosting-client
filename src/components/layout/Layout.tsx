@@ -17,7 +17,6 @@ export default function Layout({ children }: PropsWithChildren<unknown>) {
 		<main
 			className={cn(
 				'flex min-h-screen p-6',
-				styles.initialSidebar,
 				isSidebarOpened ? styles.hideSidebar : styles.showSidebar
 			)}
 		>
