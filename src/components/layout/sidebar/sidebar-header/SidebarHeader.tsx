@@ -9,9 +9,12 @@ interface Props {
 
 export function SidebarHeader({ toggleSidebar }: Props) {
 	return (
-		<div className='w-60 flex items-center gap-8 mb-6'>
-			<button onClick={toggleSidebar}>
-				<Menu className='opacity-70 hover:opacity-100 transition-opacity' />
+		<div className='flex items-center gap-7 mb-12 ml-1.5'>
+			<button
+				className='opacity-85 hover:opacity-100 transition-opacity'
+				onClick={toggleSidebar}
+			>
+				<Menu />
 			</button>
 			<Link
 				className='flex gap-2 items-center'

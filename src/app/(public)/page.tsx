@@ -1,9 +1,9 @@
 import { videoService } from '@/service/video.service'
 import type { IVideoItem } from '@/types/videoItem.type'
+import { Heading } from '@/ui/Heading'
 import { VideoItem } from '@/ui/VideoItem'
 import { Flame } from 'lucide-react'
 import { Explore } from './explore/Explore'
-import { Heading } from '@/ui/Heading'
 
 export const revalidate = 100
 export const dynamic = 'force-static'

@@ -15,8 +15,8 @@ export function Sidebar({ toggleSidebar }: Props) {
 			{/* <SubscriptionMenuItem /> */}
 
 			<SidebarMenuItem
-				menu={MORE_SIDEBAR_DATA}
 				title='MORE FROM YOUTUBE'
+				menu={MORE_SIDEBAR_DATA}
 			/>
 		</aside>
 	)

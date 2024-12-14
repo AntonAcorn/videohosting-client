@@ -23,7 +23,10 @@ export function SidebarMenuItem({ title, menu }: Props) {
 					/>
 				))}
 			</ul>
-			<span className='h-[1px] bg-gray-500 my-8 block w-48 opacity-50'></span>
+			<span
+				className='h-[1px] bg-gray-500 my-8 block opacity-50'
+				style={{ width: 'calc(100% - 24px)' }}
+			></span>
 		</nav>
 	)
 }

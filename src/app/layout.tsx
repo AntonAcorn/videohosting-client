@@ -21,7 +21,9 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={notoSans.className}>
 				<Providers>
-					<Layout>{children}</Layout>
+					<Layout>
+						{children}
+					</Layout>
 				</Providers>
 			</body>
 		</html>

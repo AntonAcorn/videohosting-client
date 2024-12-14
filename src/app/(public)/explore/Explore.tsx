@@ -6,6 +6,7 @@ import { Heading } from '@/ui/Heading'
 import { VideoItem } from '@/ui/VideoItem'
 import { useQuery } from '@tanstack/react-query'
 import { Compass, Flame } from 'lucide-react'
+import { SceletonLoader } from '@/ui/SceletonLoader'
 
 export function Explore() {
 	const { data, isLoading } = useQuery({
@@ -20,16 +21,18 @@ export function Explore() {
 				Icon={Compass}
 			></Heading>
 			<div className='grid grid-cols-5 gap-5'>
-				{isLoading
-					? 'Is loading...'
-					: data?.data.videos.length &&
-						data.data.videos.map((videItem: IVideoItem) => (
-							<VideoItem
-								key={videItem.id}
-								videoItem={videItem}
-								Icon={Flame}
-							/>
-						))}
+				{isLoading ? (
+					<SceletonLoader count={5} />
+				) : (
+					data?.data.videos.length &&
+					data.data.videos.map((videItem: IVideoItem) => (
+						<VideoItem
+							key={videItem.id}
+							videoItem={videItem}
+							Icon={Flame}
+						/>
+					))
+				)}
 			</div>
 		</section>
 	)
