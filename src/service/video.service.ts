@@ -10,6 +10,17 @@ class VideoService {
 		const response = await axios.get<IVideoItem[]>('http://localhost:4200/api/videos/trending/')
 		return response.data
 	}
+
+	getAll(searchTerm: string | null) {
+		return axios.get<IVideoArray>(
+			'http://localhost:4200/api/videos',
+			searchTerm
+				? {
+						params: { searchTerm }
+					}
+				: {}
+		)
+	}
 }
 
 export const videoService = new VideoService()

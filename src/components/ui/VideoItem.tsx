@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 interface Props {
 	videoItem: IVideoItem
-	Icon: LucideIcon
+	Icon?: LucideIcon
 }
 
 export function VideoItem({ videoItem, Icon }: Props) {
