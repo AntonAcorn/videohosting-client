@@ -1,3 +1,4 @@
+import * as m from 'framer-motion/m'
 import { PUBLIC_PAGE } from '@/config/public-page.config'
 import type { IVideoItem } from '@/types/videoItem.type'
 import { BadgeCheck, type LucideIcon } from 'lucide-react'
@@ -11,7 +12,17 @@ interface Props {
 
 export function VideoItem({ videoItem, Icon }: Props) {
 	return (
-		<div>
+		<m.div
+			whileHover={{
+				scale: 1.01,
+				y: -5
+			}}
+			transition={{
+				type: 'spring',
+				stiffness: 300,
+				damping: 30
+			}}
+		>
 			<div className='relative mb-2'>
 				<Link
 					className='max-w-[250px]'
@@ -80,6 +91,6 @@ export function VideoItem({ videoItem, Icon }: Props) {
 					</span>
 				</Link>
 			</div>
-		</div>
+		</m.div>
 	)
 }

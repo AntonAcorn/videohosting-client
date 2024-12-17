@@ -3,7 +3,6 @@ import { videoService } from '@/service/video.service'
 import type { IVideoItem } from '@/types/videoItem.type'
 import { Heading } from '@/ui/Heading'
 import { VideoItem } from '@/ui/VideoItem'
-import { log } from 'console'
 import { Flame, Gamepad2 } from 'lucide-react'
 import type { Metadata } from 'next'
 
