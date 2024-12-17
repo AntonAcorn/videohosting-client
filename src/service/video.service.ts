@@ -13,6 +13,11 @@ class VideoService {
 		return response.data
 	}
 
+	async getVideoGames() {
+		const response = await customAxios.get<IVideoArray>(`${this._VIDEOS}/games/`)
+		return response.data
+	}
+
 	getAll(searchTerm: string | null) {
 		return customAxios.get<IVideoArray>(
 			`${this._VIDEOS}`,
