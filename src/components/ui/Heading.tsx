@@ -2,7 +2,7 @@ import type { LucideIcon } from 'lucide-react'
 import type { ReactNode } from 'react'
 
 interface Props {
-	children: ReactNode
+	children?: ReactNode
 	title?: string
 	Icon: LucideIcon
 }

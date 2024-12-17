@@ -18,7 +18,7 @@ export default async function Home() {
 				title={'Trending'}
 				Icon={Flame}
 			></Heading>
-			<div className='grid grid-cols-5 gap-5'>
+			<div className='grid-5-cols'>
 				{videos?.length &&
 					videos.map((videItem: IVideoItem) => (
 						<VideoItem

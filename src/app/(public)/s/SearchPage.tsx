@@ -24,7 +24,7 @@ export function SearchPage() {
 		<section>
 			<Heading Icon={Search}>Search &quot;{searchParams.get('term')}&quot;</Heading>
 
-			<div className='grid grid-cols-6 gap-6'>
+			<div className='grid-5-cols'>
 				{isLoading ? (
 					<SceletonLoader
 						count={6}

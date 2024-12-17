@@ -20,7 +20,7 @@ export function Explore() {
 				title={'Explore'}
 				Icon={Compass}
 			></Heading>
-			<div className='grid grid-cols-5 gap-5'>
+			<div className='grid-5-cols'>
 				{isLoading ? (
 					<SceletonLoader count={5} />
 				) : (

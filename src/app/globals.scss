@@ -6,6 +6,13 @@
 	--sidebar-width: 15rem
 }
 
-body, html {
+body,
+html {
 	@apply text-white bg-bg text-base
+}
+
+@layer utilities {
+	.grid-5-cols {
+		@apply grid grid-cols-5 gap-5
+	}
 }
